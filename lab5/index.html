@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+
+<body>
+  <h1>Сводная таблица</h1>
+  <a href="./best.html">
+    <h3>Тройка лидеров рынка процессоров на октябрь 2023</h3>
+  </a>
+  <a href="LW4_43.html">
+    <h3>Главная страница</h3>
+  </a>
+  <details>
+    <summary>
+      Фильтр
+    </summary>
+    <form id="filterForm">
+      <input type="text" id="core" placeholder="ядра">
+      <br>
+      <input type="text" id="title" placeholder="название">
+      <br>
+      <input type="number" id="yearFrom" placeholder="год">
+      <input type="number" id="yearTo" placeholder="год">
+      <br>
+      <input type="number" id="auto_overclocking" placeholder="авторозгон">
+      <button type="button" onclick="handleFilter()">Найти</button>
+      <button onlclick="createTable(data,'table')">отчистить</button>
+    </form>
+
+  </details>
+  <details>
+    <summary>
+      График
+    </summary>
+    <table>
+      <form id="graphic">
+        <p>Значение по оси OX</p>
+        <input type="radio" name="ox" value="title" checked>Название<br>
+        <input type="radio" name="ox" value="year">Год<br>
+        <p>Значение по оси OY</p>
+        <input type="checkbox" name="oy" checked>Максимальная высота<br>
+        <input type="checkbox" name="oy" checked>Минимальная высота<br>
+        <input type="checkbox" name="oy" checked>Средее Значение<br>
+        <p>Тип диаграммы</p>
+        <input type="radio" name="graphType" value="column" >Столбики<br>
+        <input type="radio" name="graphType" value="dot" checked>Точки<br>
+        <p> <input type="button" value="Построить" onclick="drawGraph(this.form)"> </p>
+        <p> <input type="button" id="showTable" value="Показать таблицу"> </p>
+        <svg height=10> </svg> 
+      </form>
+      <div class="table">
+        
+        <table id="graphTable">
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+    </table>
+  </details>
+  <details>
+    <summary>
+      Сортировка
+    </summary>
+    <p>Первый уровень сортировки</p>
+    <form id="sort">
+      <p> Сортировать по</p>
+      <p> <select id="fieldsFirst">
+        </select> по убыванию?
+        <input type="checkbox" id="fieldsFirstDesc">
+      </p>
+      <p> <select id="fieldsSecond">
+        </select> по убыванию? <input type="checkbox" id="fieldsSecondDesc">
+      </p> <input type="button" value="Сортировать">
+      <input type="button" id="restart" value="Сбросить сортировку">
+    </form>
+    </form>
+  </details>
+
+  <table border="1px" id="list">
+  </table>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.7.0/d3.min.js"></script>
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script src="./graphic.js"></script>
+<script src="./test.js"></script>
+
+</html>

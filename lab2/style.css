@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333; /* Dark background color */
+    color: #ddd; /* Light text color */
+}
+
+h1 {
+    text-align: center;
+    color: #fff; /* White text color */
+}
+
+form {
+    margin: 20px auto;
+    text-align: center;
+}
+
+#result {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.input {
+    width: 300px;
+    margin: 5px;
+    background-color: #444; /* Dark input background */
+    color: #ddd; /* Light text color */
+    border: 1px solid #666; /* Dark border color */
+}
+
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result_calc {
+    margin: 20px auto;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 5px auto;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    width: 50%;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.option_content {
+    display: flex;
+    flex-direction: row;
+}
+
+.error {
+    width: 300px;
+    margin: 5px;
+    background-color: #444;
+    color: #ddd;
+    border: 1px solid #666; 
+    color: red;
+    border-color: red;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Волшебный калькулятор</h1>
+    <form id="inputForm">
+        <label for="inputType">Выберите тип входных данных:</label>
+        <select id="inputType" name="inputType">
+            <option value="1">Основание трапеции и боковая сторона</option>
+            <option value="2">Основание трапеции и угол</option>
+        </select>
+        <button type="submit">Показать</button>
+    </form>
+    <div id="result">
+        <img src="zero_set.png">
+        
+    </div>
+    <span  class="input" id="error_message"></span>
+    <div class="option_content">
+        <label name="d">
+            <input type="checkbox" id="corner" />
+            угол между диагоналям
+        </label>
+        <label name="d">
+            <input type="checkbox" id="height" />
+            высоту от основания к боковой стороне
+        </label>
+        <label name="d">
+            <input type="checkbox" id="diagonal" />
+            диагонали
+        </label>
+        <span id="checkbox-info"></span>
+    </div>
+    <button id="calculate"  onclick="calc()">Вычислить</button>
+    <button id="clear" onclick="clear()">Отчистить</button>
+    <div id="result_calc"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
