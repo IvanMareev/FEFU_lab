@@ -143,7 +143,7 @@ function createAxis(data, isFirst, isSecond) {
     // вертикальная      
     // отрисовка осей в SVG-элементе
     svg.append("g")
-        .attr("transform", `translate(${marginX}, ${height - marginY})`)
+        .attr("transform", `translate(${marginX}, ${height - marginY-40})`)
         .call(axisX)
         .selectAll("text") // подписи на оси - наклонные         
         .style("text-anchor", "end")
@@ -153,7 +153,7 @@ function createAxis(data, isFirst, isSecond) {
     svg.append("g")
         .attr("transform", `translate(${marginX}, ${marginY})`)
         .call(axisY)
-        
+
 
     return [scaleX, scaleY];
 }
@@ -180,16 +180,14 @@ function createChartDot(data, scaleX, scaleY, index, color) {
 function createChartColumn(data, scaleX, scaleY, index, color) {
     const r = 40;
 
-    let ident = ((index == 0) ? (-r / 2) : (r / 2));
-
     svg.selectAll(".dot")
         .data(data)
         .enter()
         .append("rect")
         .attr("width", r)
-        .attr("height", d => Math.max(0, height - scaleY(d.values[index])))
+        .attr("height", d => height - scaleY(d.values[index]))
         .attr("x", d => scaleX(d.labelX) + scaleX.bandwidth() / 3.3)
-        .attr("y", d => scaleY(d.values[index]) + 20) // Поднимаем столбец
+        .attr("y", d => scaleY(d.values[index]) -20) // Поднимаем столбец
         .attr("transform", `translate(${marginX}, ${marginY - 120})`)
         .attr("fill", color);
 }
